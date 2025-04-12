@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="titulo">O CRESCIMENTO DA BANCADA <br /> EVANGÉLICA EM PERNAMBUCO</h1>
+    <h1 id="titulo">O CRESCIMENTO DA BANCADA <br /> EVANGELICA EM PERNAMBUCO</h1>
     <!-- Cabeçalho -->
     <header>
     </header>
 
     <!-- Corpo principal -->
     <main>
-        <img id="fallMan1" class="fallMan" src="/images/fallManDir.png" alt="Fall Man 1">
-        <img id="fallMan2" class="fallMan" src="/images/fallManDir.png" alt="Fall Man 2">
-        <img id="fallMan3" class="fallMan" src="/images/fallMan.png" alt="Fall Man 3">
-        <img id="fallMan4" class="fallMan" src="/images/fallMan.png" alt="Fall Man 4">
+        <img id="fallMan1" class="fallMan" src="/images/FallMan1.png" alt="Fall Man 1">
+        <img id="fallMan2" class="fallMan" src="/images/FallMan2.png" alt="Fall Man 2">
+        <img id="fallMan3" class="fallMan" src="/images/FallMan3.png" alt="Fall Man 3">
+        <img id="fallMan4" class="fallMan" src="/images/FallMan4.png" alt="Fall Man 4">
         <section class="texto">
             <p>
                 Em pouco mais de 10 anos, o Brasil observou uma guinada à centro-direita em todas as esferas da sociedade. Governado pelo Partido dos Trabalhadores (PT), de esquerda, entre 2003 e o primeiro semestre de 2016, o país viu nascer e ganhar espaço um sentimento destacadamente antipetista. Em especial, após as Jornadas de Junho de 2013, que expressavam tanto um descontentamento com a gestão da então presidente Dilma Rousseff (PT) quanto um desgaste do sistema político pelos constantes escândalos de corrupção. Esse último elemento foi reforçado pela Operação Lava Jato.
@@ -30,14 +30,16 @@
 
             <p>Os evangélicos, como normalmente são agrupados os cristãos batistas, presbiterianos, pentecostais, neopentecostais, e de outras denominações, cresceram singularmente no Brasil nas últimas duas décadas, ao ponto de representarem 32% da população em 2022, de acordo com o Instituto Brasileiro de Geografia e Estatística (IBGE).</p>
             </br></br></br></br>
-            <img src="images/porcentagemEvang.png" alt="Imagem Sobreposta" class="overlay-image" width="1000" height="500" margin-top="100px">
+            <img src="images/PorcEvangNew.png" alt="Imagem Sobreposta" class="overlay-image" width="950" height="550" margin-top="100px">
         </section>
         <section class="texto">
             <p>
                 Também com o advento das redes sociais, a presença da política nas igrejas foi maximizada, refletindo nos templos os debates que ocorriam nas ruas. Os púlpitos passaram a ser ocupados por evangelistas, pastores e bispos que assumiram o papel de líderes religiosos e políticos. E com o apoio dos fieis, essas figuras se deram conta de que podiam preencher as cadeiras das casas legislativas de todo país - em especial, do Congresso Nacional.
             </p>
+
+
             <p>
-                “Autoritarismo & Avanço Conservador” busca quantificar o crescimento do apelo às pautas conservadoras na política, principalmente por meio de líderes vinculados a igrejas evangélicas. O foco de estudo está na Assembleia Legislativa de Pernambuco (Alepe). Para isso, o período de análise escolhido se estende pelas legislaturas 2014 a 2022, passando por fenômenos como a Operação Lava Jato, o impeachment de Dilma Rousseff (PT), a ascensão do Bolsonarismo - momento de maior destaque das pautas conservadoras e evangélicas na política de Pernambuco e do Brasil -, e o retorno de Lula ao Palácio do Planalto.
+                Este editorial busca quantificar o crescimento do apelo às pautas conservadoras na política, principalmente por meio de líderes vinculados a igrejas evangélicas. O foco de estudo está na Assembleia Legislativa de Pernambuco (Alepe). Para isso, o período de análise escolhido se estende pelas legislaturas 2014 a 2022, passando por fenômenos como a Operação Lava Jato, o impeachment de Dilma Rousseff (PT), a ascensão do Bolsonarismo - momento de maior destaque das pautas conservadoras e evangélicas na política de Pernambuco e do Brasil -, e o retorno de Lula ao Palácio do Planalto.
             </p>
             <p>
                 Além da análise de conjuntura de cada legislatura, o leitor terá a oportunidade de conhecer o perfil de parlamentares pernambucanos que são capazes de representar a evolução das reivindicações do conservadorismo e do seguimento evangélico na Alepe. A atuação de deputados estaduais como Joel da Harpa (PP) ganhará destaque através da exposição dos projetos de lei apresentados ao longo do mandato.
@@ -49,6 +51,44 @@
         </section>
         <!--Imagem que deve ter um espaçamento em branco-->
         <div id="whiteSpace"></div>
+
+        <!------------------------------------------------------------------------------------------------------------------>
+        <!-- Gráfico Sunburst -->
+        <section class="texto">
+            <div id="sunburst-graph"></div>
+        </section>
+        <!------------------------------------------------------------------------------------------------------------------>
+        <section class="reduto-eleitoral">
+
+            <section class="texto">
+                <h2>Reduto Eleitoral</h2>
+                <p>Distribuição da porcentagem dos votos válidos do deputado em cada município de PE.</p>
+            </section>
+
+            <select id="iframeSelector">
+                <option value="">Escolha o candidato</option>
+                <option value="datawrapper-chart-cDcZh">William Brigido</option>
+                <option value="datawrapper-chart-1IuG1">Renato Antunes</option>
+                <option value="datawrapper-chart-rpFtQ">Adalto Santos</option>
+                <option value="datawrapper-chart-bMf6y">Romero Sales Filho</option>
+                <option value="datawrapper-chart-1rewx">Pastor Cleiton Collins</option>
+                <option value="datawrapper-chart-sUgFu">Júnior Tércio</option>
+                <option value="datawrapper-chart-UpJjR">Joel da Harpa</option>
+            </select>
+
+            <div id="iframeContainer">
+                <iframe title="Pernambuco" id="datawrapper-chart-xc7jR" src="https://datawrapper.dwcdn.net/xc7jR/2/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="William Brigido" id="datawrapper-chart-cDcZh" src="https://datawrapper.dwcdn.net/cDcZh/1/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="Renato Antunes" id="datawrapper-chart-1IuG1" src="https://datawrapper.dwcdn.net/1IuG1/1/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="Adalto Santos" id="datawrapper-chart-rpFtQ" src="https://datawrapper.dwcdn.net/rpFtQ/2/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="Romero Sales Filho" id="datawrapper-chart-bMf6y" src="https://datawrapper.dwcdn.net/bMf6y/1/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="Pastor Cleiton Collins" id="datawrapper-chart-1rewx" src="https://datawrapper.dwcdn.net/1rewx/2/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="Júnior Tércio" id="datawrapper-chart-sUgFu" src="https://datawrapper.dwcdn.net/sUgFu/3/" scrolling="no" frameborder="0"></iframe>
+                <iframe title="Joel da Harpa" id="datawrapper-chart-UpJjR" src="https://datawrapper.dwcdn.net/UpJjR/4/" scrolling="no" frameborder="0"></iframe>
+            </div>
+        </section>
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
         <section class="texto">
             <h2>Legislatura de 2014</h2>
 
@@ -81,18 +121,15 @@
         </section>
 
         <!------------------------------------------------------------------------------------------------------------------>
-        <div class="info-icon" data-tooltip="Pôr mensagem sobre motivos por aqui.">i</div>
+        <div class="info-icon" data-tooltip="Os deputados dos cards foram escolhidos por sua atuação marcante em pautas conservadoras.">i</div>
 
         <div class="grafico-e-texto">
             <div class="texto">
                 <p>
-                    Nome: Cleiton Gonçalves da Silva (Pastor Cleiton Collins)</br>
-                    Profissão: Pastor da Assembleia de Deus, radialista e apresentador de TV </br>
-                    Participações na Alepe: </br>
-                    Segundo-secretário da Casa – integrante da Mesa Diretora </br>
-                    Vice-presidente da comissão de Cidadania, Direitos Humanos e Participação Popular </br>
-                    Membro titular da Comissão de Saúde </br>
-                    Fundador da Frente Parlamentar em Defesa da Família, da Vida e de Políticas Sobre Drogas (2011) </br>
+                    
+                    <em>
+                        "Tem atuação legislativa voltada para diversas áreas, com destaque para o combate às drogas, em defesa da Bíblia, da família, da vida, contra o aborto e em defesa de projetos com ênfase na melhoria da saúde da população, atenção às pessoas com deficiência e em situação de marginalização social."
+                    </em>
                 </p>
             </div>
 
@@ -103,6 +140,7 @@
             </div>
         </div>
 
+        <div class="linha-separadora2"></div>
         <!------------------------------------------------------------------------------------------------------------------>
 
         <div class="grafico-e-texto">
@@ -113,10 +151,10 @@
             </div>
             <div class="texto">
                 <p>
-                    Nome: Joel Maurino do Carmo (Joel da Harpa)</br>
-                    Profissão: Policial Militar</br>
-                    Participações na Alepe:</br>
-                    Presidente da comissão de Segurança Pública</br>
+                    
+                    <em>
+                        "Filho de Jaboatão dos Guararapes, de direita e base conservadora, cristão, o policial militar, o deputado Joel da Harpa, tem como destaque, em sua atuação na Alepe, a luta por melhores condições de vida para os profissionais da segurança pública, bem como o compromisso de representar os valores morais da família na Bancada Evangélica e das pessoas com algum tipo de limitação."
+                    </em>
                 </p>
             </div>
         </div>
@@ -126,7 +164,7 @@
         <section class="texto">
             <h2>Legislatura de 2018</h2>
 
-            <h3>Cenário Nacional</h3>
+            <h3>CONJUNTURA NACIONAL</h3>
             <p>
                 O ano de 2018 foi um divisor de águas na política brasileira, marcado pela eleição de Jair Bolsonaro à presidência e pela consolidação de um movimento conservador que alterou profundamente o equilíbrio de forças políticas no país. O pleito se desenrolou em meio a um cenário de descrença generalizada nas instituições, impulsionado pelos desdobramentos da Operação Lava Jato, que enfraqueceu partidos tradicionais, especialmente o Partido dos Trabalhadores (PT), e minou a confiança no sistema político.
             </p>
@@ -141,7 +179,15 @@
             </p>
             </br></br></br>
 
-            <h3>Cenário em Pernambuco</h3>
+            <select id="anoSelecionado">
+                <option value="todos">Todos os Anos</option>
+                <option value="2014">2014</option>
+                <option value="2018">2018</option>
+                <option value="2022">2022</option>
+            </select>
+            <div id="grafico"></div>
+
+            <h3>CONJUNTURA EM PERNAMBUCO</h3>
 
             <p>
                 Em Pernambuco, a conjuntura política de 2018 também refletiu essa onda conservadora, ainda que o estado tenha mantido o PSB no comando do governo estadual. A reeleição de Paulo Câmara (PSB) ocorreu em um contexto de desgaste da legenda, que governava o estado desde 2007. A vitória foi impulsionada pelo legado do ex-governador Eduardo Campos e pelo receio de uma guinada bolsonarista no estado, mas já evidenciava sinais de enfraquecimento da hegemonia socialista.
@@ -169,10 +215,10 @@
         <div class="grafico-e-texto">
             <div class="texto">
                 <p>
-                    Nome: Érica Clarissa Borba Cordeiro de Moura (Clarissa Tércio)</br>
-                    Profissão: Comunicadora </br>
-                    Participações na Alepe: </br>
-                    </br>
+                    
+                    <em>
+                        "Elaborar Projetos de Lei, defender a vida (desde a concepção), defender os valores da família, combater a ideologia de gênero, lutar por melhores condições de tratamento para portadores de doenças raras, cobrar do Governo mais atenção e inclusão com pessoas com deficiência nas áreas da saúde, educação, transporte e moradia, além de ampliar o trabalho desenvolvido junto ao Centro de Recuperação de Dependentes Químicos – (Novas de Paz)."
+                    </em>
                 </p>
             </div>
             <div class="grafico">
@@ -182,20 +228,23 @@
             </div>
         </div>
 
+        <div class="linha-separadora2"></div>
         <!---------------------------------------------------------------------------------------------------------------->
 
         <div class="grafico-e-texto">
             <div class="grafico">
                 <section id="alberto-feitosa">
                     <div id="alberto-feitosa-container" class="cards-grid"></div>
+
                 </section>
             </div>
             <div class="texto">
                 <p>
-                    Nome: Alberto Jorge do Nascimento Feitosa (Coronel Alberto Feitosa)</br>
-                    Profissão: Tenente-coronel da reserva da PMPE </br>
-                    Participações na Alepe: </br>
-                    Presidente da Comissão de Constituição, Legislação e Justiça</br>
+
+                    
+                    <em>
+                        "O Coronel Alberto Feitosa assumiu, em 2023, seu quinto mandato como parlamentar na Alepe, sendo eleito o segundo deputado estadual mais bem votado de Pernambuco, com 146.847 votos em todos os 184 municípios, mais o distrito de Fernando de Noronha. Foi  eleito líder da Bancada do Partido Liberal (PL) por unanimidade."
+                    </em>
                 </p>
             </div>
         </div>
@@ -206,7 +255,7 @@
         <section class="texto">
             <h2>Legislatura de 2022</h2>
 
-            <h3>Cenário Nacional</h3>
+            <h3>CONJUNTURA NACIONAL</h3>
 
             <p>
                 O ano de 2022 foi marcado por uma intensa polarização política no Brasil, centrada principalmente nas eleições presidenciais de outubro. A disputa entre o então presidente Jair Bolsonaro (PL) e o ex-presidente Luiz Inácio Lula da Silva (PT) dominou o cenário nacional, refletindo a profunda divisão ideológica no país. Bolsonaro manteve um discurso conservador, com foco em segurança pública, valores familiares e críticas ao que chamava de "globalismo" e "comunismo". Lula, por sua vez, apostou em uma plataforma de retomada do crescimento econômico, redução das desigualdades e reconstrução de políticas sociais. A campanha foi marcada por acusações mútuas, fake news e um clima de tensão que se estendeu às instituições, especialmente com Bolsonaro questionando a confiabilidade do sistema eleitoral e criticando o Supremo Tribunal Federal (STF).
@@ -229,7 +278,7 @@
             </p>
 
             </br></br></br>
-            <h3>Cenário Estadual</h3>
+            <h3>CONJUNTURA ESTADUAL</h3>
             <p>
                 A conjuntura política de Pernambuco em 2022 foi marcada por um cenário de transição e reconfiguração de forças, refletindo tanto as dinâmicas locais quanto os reflexos da polarização nacional. O ano foi especialmente significativo devido às eleições estaduais e federais, que redefiniram o mapa político do estado, tradicionalmente dominado por aliados do PT e do PSB. A disputa pelo governo do estado foi um dos principais focos de atenção, com a candidatura de Raquel Lyra (PSD) representando uma mudança no eixo de poder, ao derrotar Marília Arraes (Solidariedade) no segundo turno. A vitória de Raquel Lyra, a primeira mulher eleita governadora de Pernambuco, simbolizou uma ruptura com a hegemonia de décadas do PSB no estado, ao mesmo tempo em que evidenciou a força de uma oposição que soube capitalizar o desgaste do governo estadual e a insatisfação de parte da população.
             </p>
@@ -251,16 +300,14 @@
             </p>
         </section>
 
-
-
+        <!------------------------------------------------------------------------------------------------------------------>
         <div class="grafico-e-texto">
             <div class="texto">
                 <p>
-                    Nome: José Ivanildo de Moura Júnior (Pastor Júnior Tércio)</br>
-                    Profissão: Pastor e radialista</br>
-                    Participações na Alepe:</br>
-                    Vice-presidente da Comissão de Cidadania</br>
-                    Já participou da comissão de Educação, Cultura, Esporte e Lazer</br>
+                    
+                    <em>
+                        "Tem como prioridades do mandato a defesa da vida, dos valores cristãos, do fortalecimento da família e demais pautas conservadoras. Outra pauta que norteará o seu mandato será o combate às drogas. Há doze anos, desenvolve um trabalho voltado para a recuperação de dependentes químicos, auxiliando essas pessoas a se livrarem do uso de entorpecentes. Sua atuação será pautada na defesa da fé, da liberdade religiosa, no combate à ideologia de gênero, à violência doméstica."
+                    </em>
                 </p>
             </div>
             <div class="grafico">
@@ -270,6 +317,7 @@
             </div>
         </div>
 
+        <div class="linha-separadora2"></div>
         <!------------------------------------------------------------------------------------------------------------------>
 
         <div class="grafico-e-texto">
@@ -280,81 +328,54 @@
             </div>
             <div class="texto">
                 <p>
-                    Nome:  Abimael dos Santos Pereira (Abimael Santos)</br>
-                    Profissão: Eletricista</br>
-                    Participações na Alepe:</br>
-                    Vice presidente da Comissão de Assuntos Municipais</br>
+                    
+                    <em>
+                        "Crítico da gestão do PSB nos últimos oito anos, Abimael está ao lado da governadora Raquel Lyra na Casa de Joaquim Nabuco. Seu posicionamento nas votações, no entanto, será sempre contrário às pautas que influenciam o custo de vida da população, a exemplo do aumento de impostos. Apoiador do ex-presidente Jair Bolsonaro, o parlamentar teve como slogan de sua campanha ao Legislativo estadual “Te Liberta Pernambuco!”, e se apresenta nas redes sociais como cristão, patriota, defensor da família e dos bons costumes."
+                    </em>
                 </p>
             </div>
         </div>
 
         <!------------------------------------------------------------------------------------------------------------------>
-        <!-- Texto final -->
-        <section class="texto-final">
-            <!-- Seção da Nuvem de Palavras -->
-            <section id="nuvem-palavras">
-                <div id="palavras-container"></div>
-            </section>
+
+        <section class="texto">
+            <h2>Conclusão</h2>
+
+            <p>
+                Diante dos dados e das análises apresentadas, esperamos que o leitor consiga adquirir uma noção mais palpável do argumento inicial que fomentou este projeto: em Pernambuco, quando se considera o órgão de maior importância legislativa do estado, pode-se observar o aumento de ideias e posicionamentos conservadores, diretamente alinhado a eleição de deputados cujas principais pautas defendidas tem relação com a vertente evangélica da crença cristã, consolidando uma bancada evangélica mais vocal no estado. Estes políticos, como os listados nos perfis destacados acima, têm marcado presença no cenário político pernambucano, graças ao aumento do conservadorismo no Brasil — e no resto do globo.
+            </p>
+
+            <p>
+                De acordo com a pesquisa global Glocalities, que apurou respostas em 20 países, os sentimentos de “desesperança e desilusão social” da população são responsáveis pela ascensão dos partidos e da ideologia direitista pelo mundo. Desde o impeachment da primeira presidente mulher do país, há mais de dez anos, o Brasil trilha seu caminho para participar da onda conservadora que é cada vez mais vocal e ativa, principalmente em uma época onde informações podem correr instantaneamente e fora de controle. Em Pernambuco, é possível observar as consequências dessa tendência a partir do número de candidaturas ligadas a partidos de direita que aumentou de 11 na 18ª legislatura para 24 na 19ª. Não é coincidência que esse aumento expressivo coincida com a eleição do Presidente Jair Bolsonaro – símbolo do conservadorismo brasileiro – em 2018.
+            </p>
+
+            <p>
+                A geração Z, por exemplo, considerada por muitos uma geração mais preocupada com questões sociais de inclusão e diversidade (que se diferem profundamente dos ideais direitistas) é tida como peão para o avanço conservador. Nacionalmente, esta geração foi a que cresceu vendo o país se decepcionando com o escândalo de corrupção do Partido dos Trabalhadores (PT); que viu o começo do deterioramento da esquerda brasileira.
+            </p>
+
+            <p>
+                Com o barulho cada vez mais alto que fazem as camadas reacionárias da política, e a fraqueza enebriante do movimento esquerdista, é razoável teorizar que os jovens se sentirão mais inclinados a seguir os líderes que ocupam mais espaço. Apesar do número de candidaturas de direita na Alepe ter diminuido para 21 na eleição de 2022, este número ainda representa uma alta se considerarmos a legislatura de 2014. Pode-se inferir, portanto, que a direita permanece como uma poderosa influência na política local, marcando presença na maior quantidade de cenários possíveis.
+            </p>
+
+            <p>
+                Mapear a presença dos evangélicos em locais de poder político é extremamente necessário para localizar o avanço da direita no sistema. Uma vez que a aliança entre as duas partes farão avançar, por exemplo, projetos de lei que inibem a inclusão de pessoas trans e os direitos das mulheres, como os mencionados acima. É preciso ficar atento pois esta visão excludente vai contra o princípio democrático porque transforma a atuação da Assembleia Legislativa do Estado, concentrando-a apenas nas camadas sociais de onde vêm os próprios candidatos, aumentando a já gigante desigualdade social do país.
+            </p>
+
         </section>
-
-
-        <section class="reduto-eleitoral">
-            <h2>Reduto Eleitoral</h2>
-            <p>Distribuição da porcentagem dos votos válidos do deputado em cada município de PE.</p>
-            <select id="iframeSelector">
-                <option value="">Escolha o seu candidato:</option>
-                <option value="datawrapper-chart-cDcZh">William Brigido</option>
-                <option value="datawrapper-chart-1IuG1">Renato Antunes</option>
-                <option value="datawrapper-chart-rpFtQ">Adalto Santos</option>
-                <option value="datawrapper-chart-bMf6y">Romero Sales Filho</option>
-                <option value="datawrapper-chart-1rewx">Pastor Cleiton Collins</option>
-                <option value="datawrapper-chart-sUgFu">Júnior Tércio</option>
-                <option value="datawrapper-chart-UpJjR">Joel da Harpa</option>
-            </select>
-
-            <div id="iframeContainer">
-                <iframe title="William Brigido" id="datawrapper-chart-cDcZh" src="https://datawrapper.dwcdn.net/cDcZh/1/" scrolling="no" frameborder="0"></iframe>
-                <iframe title="Renato Antunes" id="datawrapper-chart-1IuG1" src="https://datawrapper.dwcdn.net/1IuG1/1/" scrolling="no" frameborder="0"></iframe>
-                <iframe title="Adalto Santos" id="datawrapper-chart-rpFtQ" src="https://datawrapper.dwcdn.net/rpFtQ/2/" scrolling="no" frameborder="0"></iframe>
-                <iframe title="Romero Sales Filho" id="datawrapper-chart-bMf6y" src="https://datawrapper.dwcdn.net/bMf6y/1/" scrolling="no" frameborder="0"></iframe>
-                <iframe title="Pastor Cleiton Collins" id="datawrapper-chart-1rewx" src="https://datawrapper.dwcdn.net/1rewx/2/" scrolling="no" frameborder="0"></iframe>
-                <iframe title="Júnior Tércio" id="datawrapper-chart-sUgFu" src="https://datawrapper.dwcdn.net/sUgFu/3/" scrolling="no" frameborder="0"></iframe>
-                <iframe title="Joel da Harpa" id="datawrapper-chart-UpJjR" src="https://datawrapper.dwcdn.net/UpJjR/4/" scrolling="no" frameborder="0"></iframe>
-            </div>
+        <div class="linha-separadora"></div>
+        <!-- Seção da Nuvem de Palavras -->
+        <section id="centro">
+            <p>Principais propostas de lei com teor ideológico de origem da bancada evangélica.</p>
+            <div id="palavras-container"></div>
         </section>
+        <div id="CaixaCreditos">
+            <a href="https://github.com/Bruno0205/projeto-narrativas-inovadoras/blob/main/README.md" id="creditos" target="_blank">Créditos</a>
+        </div>
 
     </main>
-
-
-    <section class="grafico-carrossel">
-        <!-- Botões de navegação -->
-        <button id="prevGraph" class="carousel-button">&#10094;</button>
-        <button id="nextGraph" class="carousel-button">&#10095;</button>
-
-        <!-- Contêiner do carrossel -->
-        <div id="graphCarousel" class="carousel-container">
-            <!-- Gráfico de Ano Selecionado -->
-            <div class="carousel-item">
-                <select id="anoSelecionado">
-                    <option value="todos">Todos os Anos</option>
-                    <option value="2014">2014</option>
-                    <option value="2018">2018</option>
-                    <option value="2022">2022</option>
-                </select>
-                <div id="grafico"></div>
-            </div>
-
-            <!-- Gráfico Sunburst -->
-            <div class="carousel-item">
-                <div id="sunburst-graph"></div>
-            </div>
-
-            <!-- Adicione mais gráficos aqui conforme necessário -->
-        </div>
-    </section>
-
 
     <script src="/script.js"></script>
 
 </body>
+
 </html>

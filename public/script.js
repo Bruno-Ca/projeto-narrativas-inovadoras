@@ -11,14 +11,37 @@ fetch("/api/sunburst")
       hovertemplate:
         "<b>%{label}</b><br>%{customdata}<br>Deputados: %{value}<extra></extra>",
       branchvalues: "total",
-      textinfo: "label+value", //Exibe nome e número de deputados
+      textinfo: "label+value", // Exibe nome e número de deputados
       insidetextorientation: "radial",
+      marker: {
+        colors: [
+          "#071b3b", // Cor para o primeiro segmento
+          "#E82828", // Cor para o segundo segmento
+          "#FFFFFF", // Cor para o terceiro segmento
+          "#E89D28", // Cor para o quarto segmento
+          "#A0BA35", // Adicione mais cores conforme necessário
+        ],
+      },
     };
 
     const layout = {
-      title: "Composição da Bancada Evangélica da ALEPE",
+      title: {
+        text: "Composição da Bancada Evangélica da ALEPE",
+        font: {
+          color: "#FFFFFF",
+          size: 18,
+          family: "NewYork, sans-serif",
+        },
+      },
       margin: { l: 0, r: 0, b: 0, t: 50 },
       height: 250,
+      plot_bgcolor: "#071b3b",
+      paper_bgcolor: "#071b3b",
+      font: {
+        color: "#FFFFFF", // Cor do texto do hover
+        size: 15,
+        family: "Arial, sans-serif",
+      },
     };
 
     Plotly.newPlot("sunburst-graph", [trace], layout, {
@@ -58,14 +81,14 @@ window.onload = function () {
         const descricao = document.createElement("p");
         descricao.textContent = `Descrição: ${deputado.descricao}`;
 
-        const votos = document.createElement("p");
-        votos.textContent = `Votos: ${deputado.votos}`;
+        //const votos = document.createElement("p");
+        //votos.textContent = `Votos: ${deputado.votos}`;
 
         const candidatura = document.createElement("p");
         candidatura.textContent = `Candidatura: ${deputado.candidatura}`;
 
         cardBack.appendChild(descricao);
-        cardBack.appendChild(votos);
+        //cardBack.appendChild(votos);
         cardBack.appendChild(seguidores);
         cardBack.appendChild(candidatura);
 
@@ -119,14 +142,14 @@ function loadCards(apiUrl, containerId) {
         cardBack.classList.add("card-back");
 
         const descricao = document.createElement("p");
-        descricao.textContent = `Descrição: ${deputado.descricao}`;
+        descricao.textContent = `${deputado.descricao}`;
         descricao.classList.add("descricao");
 
         const votos = document.createElement("p");
-        votos.textContent = `Votos: ${deputado.votos}`;
+        votos.textContent = `Votos no último pleito que participou: ${deputado.votos}`;
 
         const candidatura = document.createElement("p");
-        candidatura.textContent = `Candidatura: ${deputado.candidatura}`;
+        candidatura.textContent = `Atuação na ALEPE: ${deputado.candidatura}`;
 
         cardBack.appendChild(descricao);
         cardBack.appendChild(votos);
@@ -174,45 +197,45 @@ fetch("/api/votos")
           ? anos.map((_, index) => index)
           : [anos.indexOf(anoSelecionado)];
 
-      const traces = partidos.map((partido) => ({
+      const coresPartidos = ["#A0BA35", "#0F76F8", "#F5F5F5", "#FF5722"]; // Cores para os partidos
+
+      const traces = partidos.map((partido, index) => ({
         x: indices.map((i) => anos[i]),
         y: indices.map((i) => partido.votos[i]),
         mode: "lines+markers",
         name: partido.nome,
-        line: { width: 3 },
+        line: { color: coresPartidos[index], width: 3 }, // Aplica a cor correspondente ao partido
         marker: { size: 8 },
         hovertemplate: "%{y} votos (%{text}%)<extra></extra>",
         text: indices.map((i) => partido.percentual[i].toFixed(2)),
       }));
 
-      //Linha total de votos
+      // Linha total de votos
       traces.push({
         x: indices.map((i) => anos[i]),
         y: indices.map((i) => data.total[i]),
         mode: "lines+markers",
         name: "Total",
-        line: { color: "#000", width: 2, dash: "dash" },
+        line: { color: "#E0E0E0", width: 2, dash: "dash" }, // Altera a cor para vermelho
         marker: { size: 8 },
         hovertemplate: "%{y} votos (%{text}%)<extra></extra>",
         text: indices.map((i) => data.percentualTotal[i].toFixed(2)),
       });
 
+      const coresEventos = ["#E89D28", "#E89D28"]; // Cores para os eventos históricos
+
       const eventosHistoricos = [
-        { ano: 2014, descricao: "(Início da Operação Lava Jato)", cor: "blue" },
-        {
-          ano: 2018,
-          descricao: "(Bolsonaro se lança à presidência)",
-          cor: "blue",
-        },
+        { ano: 2014, descricao: "(Início da Operação Lava Jato)" },
+        { ano: 2018, descricao: "(Bolsonaro se lança à presidência)" },
       ];
 
-      eventosHistoricos.forEach((evento) => {
+      eventosHistoricos.forEach((evento, index) => {
         traces.push({
           x: [evento.ano, evento.ano],
           y: [0, Math.max(...data.total)],
           mode: "lines",
           name: evento.descricao,
-          line: { color: evento.cor, width: 2, dash: "dot" },
+          line: { color: coresEventos[index], width: 2, dash: "dot" }, // Aplica a cor correspondente ao evento
           hoverinfo: "none",
           hovertemplate: `<b>${evento.descricao}</b><extra></extra>`,
           showlegend: false,
@@ -222,10 +245,19 @@ fetch("/api/votos")
       const layout = {
         title:
           anoSelecionado === "todos"
-            ? "Crescimento da Votação por Partido (2014-2022)"
+            ? "Crescimento da Votação por Partido para o Cargo de Dep. Estadual (2014-2022)"
             : `Votação em ${anoSelecionado}`,
-        xaxis: { title: "Ano" },
-        yaxis: { title: "Número de Votos" },
+                font: {
+                    color: "white" 
+                },
+        xaxis: {
+          title: { text: "Ano", font: { color: "white" } },
+          tickfont: { color: "white" },
+        },
+        yaxis: {
+          title: { text: "Número de Votos", font: { color: "white" } },
+          tickfont: { color: "white" },
+        },
         hovermode: "closest",
         hoverlabel: {
           bgcolor: "white",
@@ -235,10 +267,10 @@ fetch("/api/votos")
           namelength: -1,
         },
         transition: { duration: 500 },
-        plot_bgcolor: "#f9f9f9",
-        paper_bgcolor: "#f9f9f9",
-        margin: { t: 60, b: 60, l: 60, r: 60 },
-      };
+        plot_bgcolor: "#071b3b",
+        paper_bgcolor: "#071b3b",
+        margin: { t: 60, b: 60, l: 60, r: 60 },
+      };
 
       Plotly.react("grafico", traces, layout, { displayModeBar: false });
     }
@@ -323,12 +355,28 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("Não foi possível posicionar o elemento:", el.textContent);
   }
 
+  function colorirPalavra(index) {
+    const cores = [
+      "#007BFF",
+      "#E82828",
+      "#E89D28",
+      "#A0BA35",
+      "#E82828",
+      "#E89D28",
+      "#A0BA35",
+      "#007BFF",
+      "#E82828",
+      "#E89D28",
+    ];
+    return cores[index % cores.length];
+  }
+
   fetch("/api/nuvem-palavras")
     .then((response) => response.json())
     .then((data) => {
       const elementosExistentes = [];
 
-      data.forEach((item) => {
+      data.forEach((item, index) => {
         const cloud = document.createElement("div");
         cloud.classList.add("cloud");
 
@@ -337,6 +385,8 @@ document.addEventListener("DOMContentLoaded", () => {
         link.target = "_blank";
         link.textContent = item.palavra;
         link.style.fontSize = `${item.tamanho}%`;
+        link.style.color = colorirPalavra(index);
+
 
         cloud.appendChild(link);
         container.appendChild(cloud);
@@ -352,10 +402,10 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("scroll", () => {
   const fallMans = document.querySelectorAll(".fallMan");
   const scrollPosition = window.scrollY;
-  const maxScroll = 3500;
+  const maxScroll = 4000;
 
   fallMans.forEach((fallMan, index) => {
-    let newTop = scrollPosition * 0.2;
+    let newTop = scrollPosition * 0.1;
     let opacity = 1 - scrollPosition / maxScroll;
 
     opacity = Math.max(0, Math.min(1, opacity));
@@ -371,11 +421,11 @@ document.addEventListener("scroll", () => {
 document.addEventListener("scroll", () => {
   const h1 = document.getElementById("titulo"); 
   const scrollPosition = window.scrollY; 
-  const maxScroll = 3900; 
+  const maxScroll = 7500; 
 
   if (scrollPosition <= maxScroll) {
 
-    let newTop = Math.min(scrollPosition * 1, 4000);
+    let newTop = Math.min(scrollPosition * 1, 6150);
 
     h1.style.transform = `translateY(${newTop}px)`;
   }
@@ -419,40 +469,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //------------------------------------------------------------------------------------------------
 //reduto eleitoral
-document.addEventListener("DOMContentLoaded", function() {
-  const selector = document.getElementById("iframeSelector");
-  const iframes = document.querySelectorAll("#iframeContainer iframe");
+document.addEventListener("DOMContentLoaded", function () {
+  // Selecione o iframe padrão pelo ID
+  const defaultIframe = document.getElementById("datawrapper-chart-xc7jR");
 
-  let currentIframe = null; // Armazena o iframe atualmente visível
+  // Exiba o iframe padrão inicialmente
+  if (defaultIframe) {
+      defaultIframe.style.display = "block";
+  }
 
-  selector.addEventListener("change", function() {
-      const selectedId = selector.value;
+  // Adicione um event listener ao seletor para trocar os iframes
+  const iframeSelector = document.getElementById("iframeSelector");
+  const iframeContainer = document.getElementById("iframeContainer");
 
-      if (selectedId) {
-          const selectedIframe = document.getElementById(selectedId);
+  iframeSelector.addEventListener("change", function () {
+      // Oculta todos os iframes
+      const iframes = iframeContainer.querySelectorAll("iframe");
+      iframes.forEach(iframe => {
+          iframe.style.display = "none";
+      });
 
-          if (currentIframe) {
-              // Aplica a classe de saída ao iframe atual
-              currentIframe.classList.add("iframe-slide-exit");
-              currentIframe.classList.remove("iframe-slide-exit-active");
-
-              // Aguarda a conclusão da animação de saída
-              setTimeout(() => {
-                  currentIframe.style.display = "none";
-                  currentIframe.classList.remove("iframe-slide-exit");
-              }, 500); // Tempo igual à duração da transição no CSS
+      // Verifica se o valor selecionado é vazio ("Escolha o seu candidato")
+      const selectedIframeId = iframeSelector.value;
+      if (selectedIframeId === "") {
+          // Exibe o iframe padrão
+          if (defaultIframe) {
+              defaultIframe.style.display = "block";
           }
-
-          // Exibe o novo iframe com a classe de entrada
-          selectedIframe.style.display = "block";
-          selectedIframe.classList.add("iframe-slide-enter");
-          setTimeout(() => {
-              selectedIframe.classList.add("iframe-slide-enter-active");
-              selectedIframe.classList.remove("iframe-slide-enter");
-          }, 10); // Pequeno delay para garantir que a classe seja aplicada
-
-          // Atualiza o iframe atual
-          currentIframe = selectedIframe;
+      } else {
+          // Exibe o iframe correspondente ao valor selecionado
+          const selectedIframe = document.getElementById(selectedIframeId);
+          if (selectedIframe) {
+              selectedIframe.style.display = "block";
+          }
       }
   });
 });

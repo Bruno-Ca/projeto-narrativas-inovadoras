@@ -1,6 +1,5 @@
 body {
-  font-family: "Quicksand", sans-serif;
-  background: url("images/backgroundRyanMaior.png") no-repeat top center;
+  background: url("images/Desktop_2.png") no-repeat top center;
   background-size: 100% auto;
   margin: 0;
   padding: 0;
@@ -10,35 +9,35 @@ body {
 
 header {
     text-align: center;
-    margin-top: 4000px;
+    margin-top: 6200px;
 }
 
 /*-------------------------------------*/
 /* Texto Inicial e Final */
 main section.texto,
 main section.texto-final {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: justify;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-/* Se��o Gr�fico + Texto lado a lado */
+/* Secaoo Grafico + Texto lado a lado */
 .grafico-e-texto {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
   padding: 40px 20px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   gap: 20px;
 }
 
 .grafico-e-texto .texto {
   flex: 1 1 55%;
-  max-width: 80%;
-  font-size: 1em;
+  max-width: 50%;
+  font-size: 10pt;
 }
 
 .grafico-e-texto .grafico {
@@ -47,7 +46,7 @@ main section.texto-final {
   /*background-color: #ffffff;*/
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,44 +54,59 @@ main section.texto-final {
 }
 
 #sunburst-graph {
-  width: 100%;
-  height: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-right: 5%;
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
 }
 
 /*-------------------------------------*/
 /* Tipografia */
 h1 {
-  font-family: "Roboto Slab", sans-serif;
-  font-weight: 1000;
-  color: #e5d5b2;
+    font-family: 'KensingtonDemi', sans-serif;
+    color: #e5d5b2;
+    font-weight: 5000; 
+    font-style: normal; 
+    font-size: 100pt; 
+    line-height: 96px; 
+    letter-spacing: 1px;
+    text-transform: none; 
 }
 
 #titulo {
-  text-align: center;
-  margin-top: 100px;
-  position: relative;
-  transition: transform 0s ease;
-  -webkit-text-stroke: 2px black;
-  text-stroke: 2px black;
-  font-size: 2.5em;
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
+    transition: transform 0s ease;
+    text-stroke: 2px black;
+    font-size: 80pt;
+    letter-spacing: 1px;
 }
 
 h2,
 h3 {
-  color: White;
+    color: #E5D5B2;
+    font-family: 'Antonio-Regular';
+    font-weight: 5000;
+    font-style: normal;
+    font-size: 36pt;
+    line-height: 96px;
+    letter-spacing: 1px;
+    text-transform: none;
 }
 
 p {
-  font-family: "Montserrat", serif;
-  font-weight: 400;
-  font-size: 1.8em;
-  line-height: 1.6;
-  color: white;
-  margin-bottom: 10px;
+    font-family: 'NewYork', serif;
+    font-size: 20pt;
+    line-height: 32pt;
+    letter-spacing: -0.4px;
+    color: white;
+    margin-bottom: 10px;
 }
 
 #whiteSpace{
-    padding-bottom: 1550px;
+    padding-bottom: 1100px;
 }
 
 /*Style dos flashcards*/
@@ -104,23 +118,23 @@ p {
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 100px
 }
 
 .card {
-  height: 600px;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  text-align: center;
-  perspective: 1000px; /* Para o efeito de 3D */
-  background-color: rgb(54, 56, 55);
+    height: 600px;
+    width: 400px;
+    border-radius: 10px;
+    /*box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);*/
+    overflow: visible;
+    text-align: center;
+    perspective: 1000px; /* Para o efeito de 3D */
+    background-color: #1a304c;
 }
 
 .card-inner {
-  width: 90%;
+  width: 100%;
   height: 95%;
-  margin-left: 7px; /* tava foda de centralizar essa merda */
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
@@ -129,10 +143,11 @@ p {
 .card img {
   display: block;
   margin: auto;
-  width: 100%;
-  height: 60%;
+  width: 80%;
+  height: 50%;
   object-fit: cover;
   border-radius: 10px;
+  padding-top: 75px;
 }
 
 .card.flipped .card-inner {
@@ -146,7 +161,7 @@ p {
   position: absolute;
   backface-visibility: hidden;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);*/
   padding: 15px;
   background: #082441;
 }
@@ -159,16 +174,19 @@ p {
 }
 
 .card-front h3 {
-  font-size: 2em;
+  font-size: 1.5em;
+  font-family: 'Antonio-Regular', serif;
+  font-size: 18pt;
 }
 .card-front p {
   margin: 0px 0;
-  font-size: 0.2em;
+  font-family: 'Antonio-Regular', serif;
+  font-size: 10pt;
 }
 
 .card-back {
-  height: 95%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   transform: rotateY(180deg) translateX(20px);
   display: flex;
   flex-direction: column;
@@ -178,6 +196,8 @@ p {
 
 .card-back p {
   margin: 10px 0;
+  font-family: 'NewYork', serif;
+  font-size: 15pt;
 }
 
 #grafico {
@@ -185,7 +205,7 @@ p {
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
 }
 
 #anoSelecionado {
@@ -211,12 +231,12 @@ select:hover {
 #palavras-container {
   position: relative;
   width: 80%;
-  max-width: 1200px;
-  height: 500px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid #ccc;
+  max-width: 1800px;
+  height: 600px;
+  /*background: #081c3c;*/
+  border: 2px /*solid #ccc*/;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  /*box-shadow: 0 0 30px rgba(0, 0, 0, 0.15)*/;
   overflow: hidden;
 }
 
@@ -224,9 +244,10 @@ select:hover {
 .cloud {
   position: absolute;
   padding: 10px 20px;
-  background: #fff;
+  /*background: #082441*/;
   border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+  
   /* Animação de flutuação suave */
   animation: flutuar 4s ease-in-out infinite;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -238,6 +259,7 @@ select:hover {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  font-family: 'Antonio-Regular';
   transition: transform 0.3s, color 0.3s;
 }
 
@@ -268,20 +290,29 @@ select:hover {
 /*Style do mapa de reduto eleitoral*/
 
 #iframeContainer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #071b3b;
+    max-width: auto;
+    margin-left: auto;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 iframe {
-  width: 70%;
-  height: 400px;
-  border: none;
-  display: none;
+    width: 80%;
+    height: 500px;
+    border: none;
+    display: none;
+}
+
+#iframeSelector {
+    background-color: #1a304c;
+    color: white;
 }
 
 /*-------------------------------------*/
@@ -394,7 +425,7 @@ iframe {
     border: 1px solid #ccc;
     cursor: pointer;
     position: relative;
-    left: 90%;
+    left: 50%;
 }
 
 .info-icon::after {
@@ -419,3 +450,92 @@ iframe {
         visibility: visible;
     }
 /*---------------------------------------------------------------------*/
+#centro {
+    flex: 1 1 40%;
+    max-width: 100%;
+    border-radius: 12px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+/*------------------ FONTE --------------*/
+@font-face {
+    font-family: "Lora";
+    src: url("fonts/Lora.ttf") format("truetype");
+}
+
+/* Declaração da fonte personalizada */
+@font-face {
+    font-family: 'KensingtonDemi';
+    src: url('fonts/KensingtonDemi.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "NewYork";
+    src: url("fonts/NewYorkMedium-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Antonio-Regular';
+  src: url('fonts/Antonio-Regular.ttf') format('truetype');
+}
+/*------------------------------------------------------------------------*/
+
+#centro {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    padding: 20px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    border-radius: 12px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+    #centro p {
+        font-family: 'NewYork', serif;
+        font-size: 20pt;
+        line-height: 32pt;
+        letter-spacing: -0.4px;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+#palavras-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+    width: 100%; 
+}
+
+.linha-separadora {
+    width: 80%; 
+    height: 1px; 
+    background-color: #ccc; 
+    margin: 20px auto; 
+}
+
+.linha-separadora2 {
+    width: 70%;
+    height: 5px;
+    background-color: #476492;
+    margin: 20px auto;
+}
+
+#CaixaCreditos {
+    text-align: center; /* Centraliza todo o conteúdo dentro da div */
+    margin-bottom: 10px; /* Espaçamento na parte inferior, se necessário */
+}
+
+#creditos {
+    font-family: 'NewYork', serif;
+    font-size: 10pt;
+    line-height: 32pt;
+    letter-spacing: -0.4px;
+    color: white;
+    text-decoration: none; /* Remove o sublinhado do link */
+}
